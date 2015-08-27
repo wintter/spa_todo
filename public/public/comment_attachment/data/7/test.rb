@@ -1,0 +1,1 @@
+puts Class.class.superclass.superclass.superclass

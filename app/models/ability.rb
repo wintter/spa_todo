@@ -12,10 +12,9 @@ class Ability
         task.task_user == user
       end
 
-      can [:create, :update, :destroy], Comment do |comment|
+      can [:create, :update, :destroy, :attach_files], Comment do |comment|
         comment.comment_user == user
       end
-      can :attach_files, Comment
     end
     # Define abilities for the passed in user here. For example:
     #
