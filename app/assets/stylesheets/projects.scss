@@ -1,0 +1,105 @@
+// Place all the styles related to the Projects controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background: url('background_body.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Open Sans";
+}
+.text_align_center {
+  text-align: center;
+}
+.block_tasks {
+  width:400px;
+}
+.header_project {
+  background: url('image_background.png');
+  height:40px;
+  color: white;
+  font-size: 18px;
+}
+.task_list {
+  border-top: 1px solid #e6ebed;
+  padding: 10px 15px;
+  background: white;
+}
+.done {
+  text-decoration: line-through;
+}
+.active {
+  text-decoration: none;
+}
+.calendar {
+  color: #222222;
+  padding: 10px 10px;
+  font-size: 18px;
+}
+.add_new_task {
+  padding-bottom: 10px;
+  background-color: #e3e3e3;
+}
+.plus {
+  font-size: 15px;
+  color: #468847;
+  margin: 12px 15px -5px 16px;
+  cursor: pointer;
+  padding-top: 2px;
+}
+.single_task {
+  padding: 10px 20px;
+}
+.done-true {
+  text-decoration: line-through;
+}
+.task_date{
+  font-size: 9px;
+  color: grey;
+  vertical-align: middle;
+  padding-left: 6px;
+}
+.padding_0_15 {
+  padding: 0 15px;
+  border: 1px solid transparent;
+}
+.todo_button {
+  height: 46px;
+  line-height: 46px;
+  border: 1px solid #315589;
+  background: #4e7fbc url('image_background.png');
+  color: #fff;
+  font-size: 18px;
+  padding: 0 16px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+}
+.color_eee {
+  color: #999;
+  vertical-align: middle;
+}
+.color_red {
+  color: red;
+}
+.image_calendar {
+  padding-top: 7px;
+  padding-left: 15px;
+}
+.name_project {
+  font-size: 20px;
+  color: white;
+  font-weight: 600;
+  vertical-align: middle;
+}
+.cursor_pointer {
+  cursor: pointer;
+}
+.comments_block {
+  padding-left: 100px;
+  padding-top: 10px;
+  line-height: 13px;
+  font-size: 11px;
+}
+.font_style_italic {
+  font-style: italic;
+}

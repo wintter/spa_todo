@@ -1,0 +1,18 @@
+<div class="login-form" ng-controller="SignInController">
+  <div class="head">
+    <%= image_tag 'todo.jpg' %>
+  </div>
+  <div class="alert_error" style="height:30px;padding-top:50px;"></div>
+  <form class="simple-form">
+    <li>
+      <input type="text" name="user[email]" ng-model="user.email" placeholder="Email" autofocus="true" class="text" />
+      <a href="#" class=" icon user"></a>
+    </li>
+    <li>
+      <input type="password" name="user[password]" ng-model="user.password" autocomplete="off" placeholder="Password" />
+      <a href="#" class=" icon lock"></a>
+    </li>
+    <input type="submit" ng-click="login(user)" value="Log in" />
+  </form>
+  <%#= link_to 'Login with Facebook', user_omniauth_authorize_path(:facebook) %>
+</div>

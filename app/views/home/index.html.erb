@@ -1,0 +1,12 @@
+<div ng-app="todo_list">
+  <div class="view-container">
+    <div class="container error_messages_list">
+    <% flash.each do |key, value| %>
+        <% key = 'warning' if key == 'alert' %>
+        <% key = 'success' if key == 'notice' %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+    </div>
+    <div ng-view></div>
+  </div>
+</div>

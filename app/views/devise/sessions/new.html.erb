@@ -1,0 +1,26 @@
+<div class="login-form">
+  <div class="head">
+    <%= image_tag 'todo.jpg' %>
+  </div>
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <li>
+        <%= f.text_field :email, autofocus: true, class: 'text', placeholder: 'Username' %>
+        <a href="#" class=" icon user"></a>
+      </li>
+      <li>
+        <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
+        <a href="#" class=" icon lock"></a>
+      </li>
+      <% if devise_mapping.rememberable? -%>
+          <div class="p-container">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+            <%= f.submit "Log in" %>
+
+            <div class="clear"></div>
+          </div>
+      <% end -%>
+  <% end %>
+  <%= link_to 'Login with Facebook', user_omniauth_authorize_path(:facebook) %>
+  <%#= render "devise/shared/links" %>
+</div>

@@ -1,0 +1,64 @@
+<h1 align="center">SIMPLE TODO LIST</h1>
+<div class="container" ng-controller="ProjectsController">
+  <div class="row">
+    <div ng-repeat="project in projects">
+      <div class="col-md-8 col-md-offset-2" style="margin-bottom: 40px;cursor: move;">
+        <div class="header_project">
+          <%= image_tag('image_tr_project.png', class: 'image_calendar') %>
+          <span editable-text="project.name" onbeforesave="updateProject($data, project.id)"><span class="name_project" tooltips tooltip-title="tooltip">{{ project.name || 'empty' }}</span></span>
+          <i class="glyphicon glyphicon-trash color_eee" ng-click="removeProject(project.id, $index)" id="remove_project"></i>
+        </div>
+        <div ng-controller="TaskListsController">
+          <div class="add_new_task">
+            <form ng-submit="createTask(project.id)">
+              <i class="glyphicon glyphicon-plus plus"></i>
+              <input type="text" ng-model="todoText" size="30" placeholder="New task" class="input_new_task">
+              <input class="btn-success padding_0_15 button_new_task" type="submit" value="Add Task">
+            </form>
+          </div>
+          <div ui-sortable="sortableOptions" ng-model="project.task_lists" class="task_list_block">
+            <div ng-repeat="task in project.task_lists" class="task_list">
+              <input type="checkbox" id="task_status" ng-checked="task.status == true" ng-click="changeStatus(task.id, task.status, $index)">
+              <span ng-class="{'done': task.status == true}" class="task_name" editable-text="task.name" onbeforesave="updateTask($data, task.id)">{{ task.name }}</span>
+
+              <div class="pull-right">
+                <i class="glyphicon glyphicon-time cursor_pointer" id="task_deadline" editable-date="task.deadline" onbeforesave="updateDateTask($data, task.id)"></i><span class="task_date font_style_italic">{{(task.deadline | date:"dd.MM")}}</span>
+                <i class="glyphicon glyphicon-trash color_eee cursor_pointer" id="remove_task" ng-click="removeTask(task.id, $index)"></i>
+              </div>
+              <div class="color_eee comments_block" ng-controller="CommentsController">
+                <div ng-repeat="comment in task.comments">
+                  -
+                  <span editable-text="comment.name" id="update_comment" onbeforesave="updateComment($data, comment.id)">{{comment.name}}</span>
+                  <i class="glyphicon glyphicon-remove color_red cursor_pointer" id="remove_comment" ng-click="removeComment(comment.id, $index)"></i>
+
+                  <div ng-repeat="files in comment.comment_attachments">
+                    <a target="_blank" ng-href="{{files.data_url}}">
+                      {{ files.data_identifier }}
+                    </a>
+                  </div>
+                  <div ng-controller="UploadController">
+                    <button class="btn btn-success btn-s button_upload" ngf-select="uploadFiles($files, comment.id)" multiple ngf-max-height="1000" ngf-max-size="1MB">
+                      Attach Files
+                    </button>
+                    <ul>
+                      <li ng-repeat="f in files">{{f.name}} {{f.$error}} {{f.$errorParam}}
+                      <span class="progress" ng-show="f.progress >= 0">
+                        <div style="width:{{f.progress}}%" ng-bind="f.progress + '%'"></div>
+                      </span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <a ng-click="addComments(task.id)" id="add_comment" class="cursor_pointer">Add comment</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="text-align: center;">
+    <button class="todo_button" ng-click="createProject()">Add todo</button>
+  </div>
+</div>
+

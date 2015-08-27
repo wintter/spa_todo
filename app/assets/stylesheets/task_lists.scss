@@ -1,0 +1,34 @@
+// Place all the styles related to the TaskLists controller here.
+// They will automatically be included in application.css.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.task_list_block :last-child {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.input_new_task {
+  border-radius: 4px 0 0 4px;
+  border: 0;
+  width: 590px;
+  height: 28px;
+  font-size: 14px;
+  padding: 5px 10px;
+}
+.button_new_task {
+  background-image: -webkit-linear-gradient(top, #94cbae, #508767);
+  background-image: linear-gradient(top, #94cbae, #508767);
+  background-position: left top;
+  border: 1px solid #447557;
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.75);
+  border-radius: 0 4px 4px 0;
+  height: 28px;
+  padding: 0 22px;
+  font-size: 14px;
+  position: relative;
+  margin-left: -10px;
+}
+.task_name {
+  font-size: 18px;
+  font-weight:600;
+  color: #7E9818;
+}

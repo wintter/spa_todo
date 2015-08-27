@@ -1,0 +1,35 @@
+{
+  "name": "ruby_todo",
+  "version": "0.0.1",
+  "authors": [
+    "wintter <chesterfield252@gmail.com>"
+  ],
+  "description": "single page application for ruby garage",
+  "moduleType": [
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "bootstrap-sass-official": null,
+    "angular-route": null,
+    "angular-resource": null,
+    "angular-xeditable ": null,
+    "angular-ui-sortable ": null,
+    "jquery-ui ": null,
+    "angular-tooltips": null,
+    "angular-devise": null,
+    "angular-mocks": null,
+    "sinon": null,
+    "jasmine-sinon": null,
+    "ng-file-upload-shim": null,
+    "ng-file-upload": null
+  }
+}
