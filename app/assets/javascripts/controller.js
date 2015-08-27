@@ -186,7 +186,6 @@ controllers.controller('RegisterController', ['$scope', '$http', 'Auth', '$locat
             Auth.register(data, config).then(function(registeredUser) {
                 //user register
             }, function(error) {
-                console.log(error);
                 $('.alert_error').append('<div class="alert alert-danger opensans" role="alert">Registration failed</div>');
             });
         };
