@@ -1,5 +1,12 @@
-<h1 align="center">SIMPLE TODO LIST</h1>
 <div class="container" ng-controller="ProjectsController">
+
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h3 align="center">SIMPLE TODO LIST
+        <a ng-controller="SignInController" style="cursor: pointer;" ng-click="logout()"><i class="glyphicon glyphicon-off"></i> Logout</a></h3>
+    </div>
+  </div>
+
   <div class="row">
     <div ng-repeat="project in projects">
       <div class="col-md-8 col-md-offset-2" style="margin-bottom: 40px;cursor: move;">
@@ -48,6 +55,7 @@
                       </li>
                     </ul>
                   </div>
+
                 </div>
                 <a ng-click="addComments(task.id)" id="add_comment" class="cursor_pointer">Add comment</a>
               </div>

@@ -49,12 +49,12 @@ controllers.controller('TaskListsController', ['$scope', '$http', 'TaskLists', '
     }
 ]);
 
-controllers.controller('ProjectsController', ['$scope', '$http', 'Project', 'Projects',
-    function ($scope, $http, Project, Projects) {
+controllers.controller('ProjectsController', ['$scope', '$http', 'Project', 'Projects', 'CheckLogin',
+    function ($scope, $http, Project, Projects, CheckLogin) {
+        CheckLogin();
 
         Projects.get(function(response){
             $scope.projects = response.projects;
-            console.log(response);
         });
 
         $scope.createProject = function() {
@@ -85,7 +85,7 @@ controllers.controller('CommentsController', ['$scope', '$http', 'Comment', 'Com
 
         $scope.addComments = function(task_id) {
             Comments.create({ task_list_id: task_id, name: 'New comment' }, function(res) {
-                $scope.task.comments.push(res);
+                $scope.task.comments.push(res.comment);
             });
         };
 
@@ -133,6 +133,7 @@ controllers.controller('UploadController', ['$scope', 'Upload', '$timeout',
 
 controllers.controller('SignInController', ['$scope', '$http', 'Auth', '$location',
     function ($scope, $http, Auth, $location) {
+        var config = { headers: { 'X-HTTP-Method-Override': 'POST' } };
 
         Auth.currentUser().then(function(user) {
             $location.path("/");
@@ -143,7 +144,6 @@ controllers.controller('SignInController', ['$scope', '$http', 'Auth', '$locatio
         });
 
         $scope.login = function(data) {
-            var config = { headers: { 'X-HTTP-Method-Override': 'POST' } };
 
             Auth.login(data, config).then(function(user) {
                 //console.log(user);
@@ -152,13 +152,47 @@ controllers.controller('SignInController', ['$scope', '$http', 'Auth', '$locatio
             });
         };
 
+        $scope.logout = function() {
+            var config = { headers: { 'X-HTTP-Method-Override': 'DELETE' } };
+
+            Auth.logout(config).then(function(oldUser) {
+                // alert(oldUser.name + "you're signed out now.");
+            }, function(error) {
+                // An error occurred logging out.
+            });
+        };
+
         $scope.$on('devise:login', function(event, currentUser) {
             $location.path("/");
             // after a login, a hard refresh, a new tab
         });
 
+        $scope.$on('devise:logout', function(event, oldCurrentUser) {
+            $location.path("/login");
+        });
+
         $scope.$on('devise:new-session', function(event, currentUser) {
             //$location.path("/");
+        });
+    }
+]);
+
+controllers.controller('RegisterController', ['$scope', '$http', 'Auth', '$location',
+    function ($scope, $http, Auth, $location) {
+        var config = { headers: { 'X-HTTP-Method-Override': 'POST' } };
+
+        $scope.register = function(data) {
+
+            Auth.register(data, config).then(function(registeredUser) {
+                //user register
+            }, function(error) {
+                console.log(error);
+                $('.alert_error').append('<div class="alert alert-danger opensans" role="alert">Registration failed</div>');
+            });
+        };
+
+        $scope.$on('devise:new-registration', function(event, user) {
+            $location.path("/");
         });
     }
 ]);

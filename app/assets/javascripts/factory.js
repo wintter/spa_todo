@@ -44,4 +44,11 @@ todo_list.factory('Comment', ['$resource', function($resource) {
         });
 }]);
 
+todo_list.factory('CheckLogin', ['Auth', '$location', function(Auth, $location) {
+    return function() {
+        if(!Auth.isAuthenticated()) {
+            $location.path('/login');
+        }
+    }
+}]);
 

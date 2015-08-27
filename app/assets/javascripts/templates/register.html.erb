@@ -1,0 +1,21 @@
+<div class="login-form" ng-controller="SignInController">
+  <div class="head">
+    <%= image_tag 'todo.jpg' %>
+  </div>
+  <div class="alert_error" style="height:30px;padding-top:50px;"></div>
+  <form class="simple-form">
+    <li>
+      <input type="text" name="user[email]" ng-model="user.email" placeholder="Email" autofocus="true" class="text" />
+      <a href="#" class=" icon user"></a>
+    </li>
+    <li>
+      <input type="password" name="user[password]" ng-model="user.password" autocomplete="off" placeholder="Password" />
+      <a href="#" class=" icon lock"></a>
+    </li>
+    <li>
+      <input type="password" name="user[confirm_password]" ng-model="user.confirm_password" autocomplete="off" placeholder="Confirm Password" />
+      <a href="#" class=" icon lock"></a>
+    </li>
+    <input type="submit" ng-click="register(user)" value="Register" />
+  </form>
+</div>

@@ -27,6 +27,10 @@ todo_list.config(['$routeProvider', function($routeProvider) {
                 controller:  'SignInController',
                 templateUrl: 'login.html'
             }).
+            when('/register', {
+                controller:  'RegisterController',
+                templateUrl: 'register.html'
+            }).
             otherwise({
                 redirectTo: '/'
             });
