@@ -23,7 +23,7 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-	background: asset-path('bg.jpg') no-repeat center fixed;
+	background:image-url('bg.jpg') no-repeat center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -63,7 +63,7 @@ body{
 }
 
 .icon{
-	background:asset-path('icons.png')  no-repeat 0px 0px;
+	background:image-url('icons.png')  no-repeat 0px 0px;
 	height:30px;
 	width:30px;
 	display: block;
@@ -72,11 +72,11 @@ body{
 }
 
 .user{
-	background: asset-path('icons.png') no-repeat 12px 11px;
+	background: image-url('icons.png') no-repeat 12px 11px;
 	
 }
 .lock{
-	background: asset-path('icons.png') no-repeat -17px 11px;
+	background: image-url('icons.png') no-repeat -17px 11px;
 }
 .login-form input[type="text"], input[type="password"] {
 	font-family: 'Open Sans', sans-serif;
@@ -301,10 +301,10 @@ body{
 	width:69%;
 	}
 	.user {
-		background: asset-path('icons.png') no-repeat 12px 4px;
+		background: image-url('icons.png') no-repeat 12px 4px;
 	}
 	.lock {
-		background: asset-path('icons.png') no-repeat -20px 3px;
+		background: image-url('icons.png') no-repeat -20px 3px;
 	}
 	.p-container .checkbox {
 	float: none;
