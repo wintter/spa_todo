@@ -23,8 +23,6 @@
 //= require angular-devise/lib/devise
 //= require ng-file-upload
 //= require ng-file-upload-shim
-//=# require sinonjs
-//=# require jasmine-sinon
 //= require ui-bootstrap-custom-0.13.3.min.js
 //= require ui-bootstrap-custom-tpls-0.13.3.min.js
 //= require_tree ./templates

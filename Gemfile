@@ -56,6 +56,11 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
   gem 'awesome_print'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-jasmine'
+  gem 'guard-rspec'
+  gem 'guard-shell'
   gem 'jasmine-rails'
   gem 'poltergeist'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -24,7 +24,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    render json: @project
+    render json: { nothing: true }
   end
 
   private
