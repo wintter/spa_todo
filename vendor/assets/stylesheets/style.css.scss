@@ -63,7 +63,7 @@ body{
 }
 
 .icon{
-	background:url('icons.png')  no-repeat 0px 0px;
+	background:asset-path('icons.png')  no-repeat 0px 0px;
 	height:30px;
 	width:30px;
 	display: block;
@@ -72,11 +72,11 @@ body{
 }
 
 .user{
-	background: url('icons.png') no-repeat 12px 11px;
+	background: asset-path('icons.png') no-repeat 12px 11px;
 	
 }
 .lock{
-	background: url('icons.png') no-repeat -17px 11px;
+	background: asset-path('icons.png') no-repeat -17px 11px;
 }
 .login-form input[type="text"], input[type="password"] {
 	font-family: 'Open Sans', sans-serif;
@@ -301,10 +301,10 @@ body{
 	width:69%;
 	}
 	.user {
-		background: url('icons.png') no-repeat 12px 4px;
+		background: asset-path('icons.png') no-repeat 12px 4px;
 	}
 	.lock {
-		background: url('icons.png') no-repeat -20px 3px;
+		background: asset-path('icons.png') no-repeat -20px 3px;
 	}
 	.p-container .checkbox {
 	float: none;
