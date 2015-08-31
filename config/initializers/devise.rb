@@ -243,8 +243,8 @@ Devise.setup do |config|
     code = '412182575633605'
     secret_key = '05a765cea352c7bd2df2bdcb22cb8f73'
   else
-    code = '1619406021650927'
-    secret_key = '68ca7c28f6d8b62e59bf994615308f4f'
+    code = '425215037676597'
+    secret_key = 'c913085c275787ae4016c120ebda68f7'
   end
 
   config.omniauth :facebook, code, secret_key,provider_ignores_state: true, scope: 'email', info_fields: 'email, name'
