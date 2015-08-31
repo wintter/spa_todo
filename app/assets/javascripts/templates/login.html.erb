@@ -12,7 +12,9 @@
       <input type="password" name="user[password]" ng-model="user.password" autocomplete="off" placeholder="Password" />
       <a href="#" class=" icon lock"></a>
     </li>
-    <input type="submit" ng-click="login(user)" value="Log in" />
+    <div class="section row">
+        <a class="btnf fb" href="/users/auth/facebook"> login<span> with facebook</span></a>
+        <input type="submit" ng-click="login(user)" value="Log in" />
+    </div>
   </form>
-  <%#= link_to 'Login with Facebook', user_omniauth_authorize_path(:facebook) %>
 </div>
