@@ -147,7 +147,7 @@ controllers.controller 'SignInController', [
       Auth.login(data, config).then ((user) ->
         #console.log(user);
       ), (error) ->
-        $('.alert_error').append '<div class="alert alert-danger opensans" role="alert">' + error.data.error + '</div>'
+        $('.alert_error').html '<div class="alert alert-danger opensans" role="alert">' + error.data.error + '</div>'
 
     $scope.logout = ->
       config = headers: 'X-HTTP-Method-Override': 'DELETE'
