@@ -11,12 +11,12 @@
   "description": "Lightweight Angular JS directive to upload files. Support drag&drop, paste image, progress and abort",
   "ignore": [],
   "license": "MIT",
-  "version": "7.0.13",
-  "_release": "7.0.13",
+  "version": "7.0.15",
+  "_release": "7.0.15",
   "_resolution": {
     "type": "version",
-    "tag": "7.0.13",
-    "commit": "33c36ef4fe663bc2370667acea964a4274851dbe"
+    "tag": "7.0.15",
+    "commit": "5d0d74bc6d8420ea1856a6a0a2478613a0607cd2"
   },
   "_source": "git://github.com/danialfarid/angular-file-upload-bower.git",
   "_target": ">6.0.3",

@@ -19,7 +19,6 @@
 //= require angular-rails-templates
 //= require angular-xeditable
 //= require angular-ui-sortable
-//= require angular-tooltips
 //= require angular-devise/lib/devise
 //= require ng-file-upload
 //= require ng-file-upload-shim

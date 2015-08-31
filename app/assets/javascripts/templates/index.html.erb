@@ -12,7 +12,7 @@
       <div class="col-md-8 col-md-offset-2" style="margin-bottom: 40px;cursor: move;">
         <div class="header_project">
           <%= image_tag('image_tr_project.png', class: 'image_calendar') %>
-          <span editable-text="project.name" onbeforesave="updateProject($data, project.id)"><span class="name_project" tooltips tooltip-title="tooltip">{{ project.name || 'empty' }}</span></span>
+          <span editable-text="project.name" onbeforesave="updateProject($data, project.id)"><span class="name_project">{{ project.name || 'empty' }}</span></span>
           <i class="glyphicon glyphicon-trash color_eee" ng-click="removeProject(project.id, $index)" id="remove_project"></i>
         </div>
         <div ng-controller="TaskListsController">

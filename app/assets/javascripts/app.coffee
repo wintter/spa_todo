@@ -6,7 +6,6 @@ todo_list = angular.module('todo_list',[
   'xeditable',
   'ui.bootstrap',
   'ui.sortable',
-  '720kb.tooltips',
   'Devise',
   'ngFileUpload'
 ])
