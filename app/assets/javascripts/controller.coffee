@@ -104,7 +104,8 @@ controllers.controller 'CommentsController', [
         id: id
         name: data
       }, (res) ->
-        $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
+        if res.message
+          $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
 
     $scope.removeComment = (id, key) ->
       Comment.destroy { id: id }, ->
