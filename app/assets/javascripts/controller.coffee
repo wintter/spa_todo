@@ -22,9 +22,12 @@ controllers.controller 'TaskListsController', [
           $scope.todoText = ''
 
     $scope.updateTask = (data, id) ->
-      TaskList.update
+      TaskList.update {
         id: id
         name: data
+      }, (res) ->
+        if res.message
+          $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
 
     $scope.updateDateTask = (data, id) ->
       TaskList.update

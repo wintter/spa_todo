@@ -45,4 +45,13 @@ feature 'task', js: true do
     expect(page).to have_content '01.01'
   end
 
+  scenario 'user leave the task name field empty' do
+    find('.task_name').click
+    find('.editable-input').set ''
+    within('.editable-buttons') do
+      find('.btn-primary').click
+    end
+    expect(page).to have_content 'Task has not been updated'
+  end
+
 end

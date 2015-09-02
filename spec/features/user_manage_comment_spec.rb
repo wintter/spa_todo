@@ -28,4 +28,13 @@ feature 'comment', js: true do
     expect(page).to have_content 'new comment name'
   end
 
+  scenario 'user leave the comment name field empty' do
+    find('#update_comment').click
+    find('.editable-input').set ''
+    within('.editable-buttons') do
+      find('.btn-primary').click
+    end
+    expect(page).to have_content 'Comment has not been updated'
+  end
+
 end

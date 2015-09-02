@@ -30,4 +30,13 @@ feature 'project', js: true do
     expect(page).to have_content 'new name'
   end
 
+  scenario 'user leave the project name field empty' do
+    find('.name_project').click
+    find('.editable-input').set ''
+    within('.editable-buttons') do
+      find('.btn-primary').click
+    end
+    expect(page).to have_content 'Project has not been updated'
+  end
+
 end
