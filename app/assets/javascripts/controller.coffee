@@ -5,8 +5,10 @@ controllers.controller 'TaskListsController', [
   '$http'
   'TaskLists'
   'TaskList'
-  'orderByFilter'
-  ($scope, $http, TaskLists, TaskList, orderByFilter) ->
+  'orderByFilter',
+  '$timeout',
+  'alertFactory',
+  ($scope, $http, TaskLists, TaskList, orderByFilter, $timeout, alertFactory) ->
     angular.forEach $scope.project.task_lists, (value, key) ->
       value.deadline = new Date(value.deadline)
 
@@ -16,7 +18,8 @@ controllers.controller 'TaskListsController', [
         name: $scope.todoText
       }, (res) ->
         if res.message
-          $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
+	        alertFactory.showError(res.message)
+
         else
           $scope.project.task_lists.push res.task_list
           $scope.todoText = ''
@@ -61,8 +64,9 @@ controllers.controller 'ProjectsController', [
   '$http'
   'Project'
   'Projects'
-  'CheckLogin'
-  ($scope, $http, Project, Projects, CheckLogin) ->
+  'CheckLogin',
+	'alertFactory',
+  ($scope, $http, Project, Projects, CheckLogin, alertFactory) ->
     CheckLogin()
     Projects.get (response) ->
       $scope.projects = response.projects
@@ -77,9 +81,9 @@ controllers.controller 'ProjectsController', [
       Project.update {
         id: id
         name: data
-      }, (response) ->
-        if response.message
-          $('.error_messages_list').html '<div class="alert alert-warning">' + response.message + '</div>'
+      }, (res) ->
+        if res.message
+	        alertFactory.showError(res.message)
 
     $scope.removeProject = (id, key) ->
       Project.destroy { id: id }, ->
@@ -91,8 +95,9 @@ controllers.controller 'CommentsController', [
   '$scope'
   '$http'
   'Comment'
-  'Comments'
-  ($scope, $http, Comment, Comments) ->
+  'Comments',
+	'alertFactory',
+  ($scope, $http, Comment, Comments, alertFactory) ->
 
     $scope.addComments = (task_id) ->
       Comments.create {
@@ -108,7 +113,7 @@ controllers.controller 'CommentsController', [
         name: data
       }, (res) ->
         if res.message
-          $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
+	        alertFactory.showError(res.message)
 
     $scope.removeComment = (id, key) ->
       Comment.destroy { id: id }, ->

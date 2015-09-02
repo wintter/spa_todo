@@ -84,3 +84,13 @@ todo_list.factory 'CheckLogin', [
       if !Auth.isAuthenticated()
         $location.path '/login'
 ]
+
+todo_list.factory 'alertFactory',[
+	'$timeout'
+	($timeout) ->
+		showError: (message) ->
+			$('.error_messages_list').html '<div class="alert alert-warning">' + message + '</div>'
+			$timeout(->
+				$('.error_messages_list').html('')
+			2000)
+]

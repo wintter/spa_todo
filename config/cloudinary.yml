@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dj4ahcvxs
+  api_key: '171719699671231'
+  api_secret: awAsajcJU0MHK85BtSEqR9TW7es
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dj4ahcvxs
+  api_key: '171719699671231'
+  api_secret: awAsajcJU0MHK85BtSEqR9TW7es
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dj4ahcvxs
+  api_key: '171719699671231'
+  api_secret: awAsajcJU0MHK85BtSEqR9TW7es
+  enhance_image_tag: true
+  static_image_support: false
