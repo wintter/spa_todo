@@ -7,14 +7,8 @@ class Ability
       can :manage, :all
     else
       can [:index, :create, :update, :destroy], Project, user: user
-
-      can [:index, :create, :update, :destroy], TaskList do |task|
-        task.task_user == user
-      end
-
-      can [:create, :update, :destroy, :attach_files], Comment do |comment|
-        comment.comment_user == user
-      end
+      can [:index, :create, :update, :destroy], TaskList, project: { user: user }
+      can [:create, :update, :destroy, :attach_files], Comment, task_list: { project: { user: user } }
     end
     # Define abilities for the passed in user here. For example:
     #

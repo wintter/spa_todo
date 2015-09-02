@@ -8,7 +8,7 @@
 .input_new_task {
   border-radius: 4px 0 0 4px;
   border: 0;
-  width: 590px;
+  width: 78%;
   height: 28px;
   font-size: 14px;
   padding: 5px 10px;
@@ -31,4 +31,14 @@
   font-size: 18px;
   font-weight:600;
   color: #7E9818;
+  cursor: pointer;
+}
+.alert-warning {
+  text-align: center !important;
+  color: #a94442 !important;
+  font-size: 20px !important;
+  border: 1px solid transparent !important;
+}
+#update_comment {
+  cursor: pointer;
 }

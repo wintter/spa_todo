@@ -90,6 +90,7 @@ body {
   color: white;
   font-weight: 600;
   vertical-align: middle;
+  cursor: pointer;
 }
 .cursor_pointer {
   cursor: pointer;
@@ -102,4 +103,7 @@ body {
 }
 .font_style_italic {
   font-style: italic;
+}
+#remove_project {
+  cursor: pointer;
 }

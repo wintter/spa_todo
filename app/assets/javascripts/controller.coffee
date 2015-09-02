@@ -15,8 +15,11 @@ controllers.controller 'TaskListsController', [
         project_id: project_id
         name: $scope.todoText
       }, (res) ->
-        $scope.project.task_lists.push res.task_list
-        $scope.todoText = ''
+        if res.message
+          $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
+        else
+          $scope.project.task_lists.push res.task_list
+          $scope.todoText = ''
 
     $scope.updateTask = (data, id) ->
       TaskList.update
@@ -63,8 +66,9 @@ controllers.controller 'ProjectsController', [
 
     $scope.createProject = ->
       Projects.create { name: 'New Project' }, (res) ->
-        $scope.projects.unshift res.project
-        $scope.projectText = ''
+        if !res.message
+          $scope.projects.unshift res.project
+          $scope.projectText = ''
 
     $scope.updateProject = (data, id) ->
       Project.update {
@@ -72,7 +76,7 @@ controllers.controller 'ProjectsController', [
         name: data
       }, (response) ->
         if response.message
-          $('.error_messages_list').append '<div class="alert alert-warning">' + response.message + '</div>'
+          $('.error_messages_list').html '<div class="alert alert-warning">' + response.message + '</div>'
 
     $scope.removeProject = (id, key) ->
       Project.destroy { id: id }, ->
@@ -92,12 +96,15 @@ controllers.controller 'CommentsController', [
         task_list_id: task_id
         name: 'New comment'
       }, (res) ->
-        $scope.task.comments.push res.comment
+        if !res.message
+          $scope.task.comments.push res.comment
 
     $scope.updateComment = (data, id) ->
-      Comment.update
+      Comment.update {
         id: id
         name: data
+      }, (res) ->
+        $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
 
     $scope.removeComment = (id, key) ->
       Comment.destroy { id: id }, ->
