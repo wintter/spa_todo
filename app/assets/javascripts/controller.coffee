@@ -19,7 +19,6 @@ controllers.controller 'TaskListsController', [
       }, (res) ->
         if res.message
 	        alertFactory.showError(res.message)
-
         else
           $scope.project.task_lists.push res.task_list
           $scope.todoText = ''
@@ -29,8 +28,7 @@ controllers.controller 'TaskListsController', [
         id: id
         name: data
       }, (res) ->
-        if res.message
-          $('.error_messages_list').html '<div class="alert alert-warning">' + res.message + '</div>'
+        alertFactory.showError(res.message) if res.message
 
     $scope.updateDateTask = (data, id) ->
       TaskList.update
@@ -82,8 +80,7 @@ controllers.controller 'ProjectsController', [
         id: id
         name: data
       }, (res) ->
-        if res.message
-	        alertFactory.showError(res.message)
+	      alertFactory.showError(res.message) if res.message
 
     $scope.removeProject = (id, key) ->
       Project.destroy { id: id }, ->
@@ -112,8 +109,7 @@ controllers.controller 'CommentsController', [
         id: id
         name: data
       }, (res) ->
-        if res.message
-	        alertFactory.showError(res.message)
+	      alertFactory.showError(res.message) if res.message
 
     $scope.removeComment = (id, key) ->
       Comment.destroy { id: id }, ->

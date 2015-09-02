@@ -1,5 +1,4 @@
 class ProjectsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
   load_and_authorize_resource
 
   def index

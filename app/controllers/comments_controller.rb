@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-  skip_before_filter :verify_authenticity_token
   load_and_authorize_resource
 
   def create
@@ -24,14 +23,14 @@ class CommentsController < ApplicationController
   end
 
   def attach_files
-    @comment.comment_attachments.create!(comment_params)
+    @comment.comment_attachments.create!(data: params[:file])
     render json: { nothing: true }
   end
 
   private
 
-  def comment_params
-    params.permit(:name, :task_list_id, :data)
-  end
+    def comment_params
+      params.permit(:name, :task_list_id)
+    end
 
 end
