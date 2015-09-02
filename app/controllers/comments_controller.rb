@@ -24,14 +24,14 @@ class CommentsController < ApplicationController
   end
 
   def attach_files
-    @comment.comment_attachments.create!(data: params[:file])
+    @comment.comment_attachments.create!(comment_params)
     render json: { nothing: true }
   end
 
   private
 
   def comment_params
-    params.permit(:name, :task_list_id)
+    params.permit(:name, :task_list_id, :data)
   end
 
 end
