@@ -129,7 +129,7 @@ controllers.controller 'UploadController', [
         if file and !file.$error
           file.upload = Upload.upload(
             url: '/comments/' + comment_id + '/attach_files'
-            data: file)
+	          file: file)
           file.upload.then ((response) ->
             $timeout ->
               file.result = response.data
