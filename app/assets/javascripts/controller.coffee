@@ -194,7 +194,7 @@ controllers.controller 'RegisterController', [
 			Auth.register(data, config).then ((registeredUser) ->
 				#user register
 			), (error) ->
-				$('.alert_error').append '<div class="alert alert-danger opensans" role="alert">Registration failed</div>'
+				$('.alert_error').html '<div class="alert alert-danger opensans" role="alert">Registration failed</div>'
 
 		$scope.$on 'devise:new-registration', (event, user) ->
 			$location.path '/'
