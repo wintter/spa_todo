@@ -7,6 +7,10 @@
         <div class="alert alert-<%= key %>"><i class="glyphicon glyphicon-exclamation-sign"></i> <%= value %></div>
     <% end %>
     </div>
+    <form action="comments/72/attach_files" method="post" enctype="multipart/form-data">
+      <input type="file" name="file" />
+      <input type="submit" value="Go" />
+    </form>
     <div ng-view></div>
   </div>
 </div>
