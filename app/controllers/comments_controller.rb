@@ -23,7 +23,14 @@ class CommentsController < ApplicationController
   end
 
   def attach_files
-    @comment.comment_attachments.create!(data: params[:file])
+    auth = {
+        cloud_name: "dj4ahcvxs",
+        api_key:    "171719699671231",
+        api_secret: "awAsajcJU0MHK85BtSEqR9TW7es"
+    }
+
+    Cloudinary::Uploader.upload(params[:file], auth)
+    #@comment.comment_attachments.create!(data: params[:file])
     render json: { nothing: true }
   end
 
