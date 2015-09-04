@@ -8,7 +8,7 @@ controllers.controller 'ProjectsController', [
 	'CheckLogin',
 	'alertFactory',
 	($scope, $http, Project, Projects, CheckLogin, alertFactory) ->
-		CheckLogin()
+
 		Projects.get (response) ->
 			$scope.projects = response.projects
 
