@@ -6,8 +6,11 @@ describe 'CommentsController', ->
     @controller('CommentsController', { $scope: @scope, $http: @http })
 
   describe 'addComments', ->
+	  beforeEach ->
+		  @scope.commentText = 'test comment'
+
     it 'create new comment', ->
-      @http.expectPOST('/comments?name=New+comment&task_list_id=1').respond(200, '')
+      @http.expectPOST('/comments?name=test+comment&task_list_id=1').respond(200, '')
       @scope.addComments(1)
       @http.flush()
 

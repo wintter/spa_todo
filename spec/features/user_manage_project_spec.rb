@@ -7,13 +7,11 @@ feature 'project', js: true do
     visit '/#/'
   end
 
-  scenario 'user sign in and sees \'Add todo\' button' do
-    expect(page).to have_content('Add todo')
-  end
-
   scenario 'user press \'Add Todo\' button and create new project' do
     find('.todo_button').click
-    expect(page).to have_content('New Project')
+    find('#new_project').set 'test project'
+    click_button 'Add project'
+    expect(page).to have_content('test project')
   end
 
   scenario 'user can delete his projects' do

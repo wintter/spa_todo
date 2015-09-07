@@ -1,0 +1,8 @@
+<form ng-submit="addComments(task.id)" class="font_opensans popup_project" ng-controller="CommentsController">
+    <div class="error_comment" style="height:50px;padding-top: 10px;"></div>
+    <h2 style="text-align: center">Enter new comment</h2><br/>
+    <input type="text" id="new_comment" ng-model="commentText" size="30" placeholder="New comment" class="input_new_comment">
+    <input type="submit" class="btn btn-success" value="Add comment">
+</form>
+
+

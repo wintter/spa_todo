@@ -6,7 +6,8 @@ todo_list = angular.module('todo_list',[
   'ui.bootstrap',
   'ui.sortable',
   'Devise',
-  'ngFileUpload'
+  'ngFileUpload',
+	'ngDialog'
 ])
 
 todo_list.run (editableOptions) ->

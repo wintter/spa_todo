@@ -11,7 +11,9 @@ feature 'comment', js: true do
 
   scenario 'user add new comment to task' do
     find('#add_comment').click
-    expect(page).to have_content 'New comment'
+    find('#new_comment').set 'test comment'
+    click_button 'Add comment'
+    expect(page).to have_content 'test comment'
   end
 
   scenario 'user can delete comment from project' do

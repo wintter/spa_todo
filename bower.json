@@ -29,6 +29,7 @@
     "sinon": null,
     "jasmine-sinon": null,
     "ng-file-upload-shim": null,
-    "ng-file-upload": null
+    "ng-file-upload": null,
+    "ngDialog": null
   }
 }

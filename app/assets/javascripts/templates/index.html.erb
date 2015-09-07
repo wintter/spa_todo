@@ -1,4 +1,4 @@
-<div class="container" ng-controller="ProjectsController">
+<div class="container font_opensans" ng-controller="ProjectsController">
   <div class="panel panel-default">
     <div class="panel-body">
       <h3 align="center">SIMPLE TODO LIST
@@ -55,7 +55,7 @@
                     </ul>
                   </div>
                 </div>
-                <a ng-click="addComments(task.id)" id="add_comment" class="cursor_pointer">Add comment</a>
+                <a ng-click="clickToOpen()" id="add_comment" class="cursor_pointer">Add comment</a>
               </div>
             </div>
           </div>
@@ -64,7 +64,7 @@
     </div>
   </div>
   <div class="row" style="text-align: center;">
-    <button class="todo_button" ng-click="createProject()">Add todo</button>
+    <button class="todo_button" ng-click="clickToOpen()">Add todo</button>
   </div>
 </div>
 

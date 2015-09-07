@@ -166,3 +166,11 @@ $ya: #c4c;
 .btnf.ya.naked:before {
   color: darken($ya, 5%);
 }
+.input_new_comment {
+  border-radius: 4px 0 0 4px;
+  border: 0;
+  width: 70%;
+  height: 28px;
+  font-size: 14px;
+  padding: 5px 10px;
+}

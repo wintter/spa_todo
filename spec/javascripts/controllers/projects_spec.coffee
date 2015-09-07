@@ -12,8 +12,11 @@ describe 'ProjectsController', ->
       expect(@scope.projects.length).toEqual(1)
 
   describe 'createProject', ->
+	  beforeEach ->
+		  @scope.projectText = 'test project'
+
     it 'creates a new project', ->
-      @http.expectPOST('/projects?name=New+Project').respond(200, { id: 2, name: 'New Project' })
+      @http.expectPOST('/projects?name=test+project').respond(200, { id: 2, name: 'New Project' })
       @scope.createProject()
       @http.flush()
 

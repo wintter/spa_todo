@@ -9,6 +9,9 @@ body {
   background-size: cover;
   font-family: "Open Sans";
 }
+.font_opensans {
+  font-family: 'Open Sans';
+}
 .text_align_center {
   text-align: center;
 }
@@ -106,4 +109,17 @@ body {
 }
 #remove_project {
   cursor: pointer;
+}
+.popup_project h2 {
+  color: #444;
+  font-weight: 600;
+  font-size: 20px;
+}
+.popup_project .input_new_project {
+  border-radius: 4px 0 0 4px;
+  border: 0;
+  width: 74%;
+  height: 28px;
+  font-size: 14px;
+  padding: 5px 10px;
 }
